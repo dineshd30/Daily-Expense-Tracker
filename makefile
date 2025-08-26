@@ -13,11 +13,9 @@ venv:
 	else \
 		echo "✅ Virtual environment already exists."; \
 	fi
+	@bash -i -c "source $(VENV)/bin/activate"
+	@echo "✅ Activated virtual environment"
 
-freeze:
-	@pip freeze > requirements.txt
-	@echo "✅ Requirements frozen to requirements.txt"
-
-install:
-	@pip install -r requirements.txt
-	@echo "✅ Packages installed from requirements.txt"
+install: venv
+	@poetry install
+	@echo "✅ Packages installed via poetry"

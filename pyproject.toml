@@ -1,0 +1,22 @@
+[project]
+name = "daily-expense-tracker"
+version = "0.1.0"
+description = "daily expense/income tracker using python, pandas and matplotlib"
+authors = [
+    {name = "dineshd30",email = "dinesh.lawate@salecycle.com"}
+]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "pandas (>=2.3.2,<3.0.0)",
+    "matplotlib (>=3.10.5,<4.0.0)"
+]
+
+[tool.poetry]
+package-mode = false
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
