@@ -11,6 +11,9 @@ You can add/remove python dependencies using extremely performant package manage
 Run app using `uv run main.py` and you will see below options.
 
 ![alt text](/assets/1.image.png)
+--
 ![alt text](/assets/2.image.png)
+--
 ![alt text](/assets/3.image.png)
+--
 ![alt text](/assets/4.image.png)
