@@ -48,7 +48,7 @@ class CSV:
         if filtered_df.empty:
             print("failed find any transactions for given dates")
         else:
-            filtered_df.sort_values("date", inplace=True)
+            filtered_df = filtered_df.sort_values("date")
             print(
                 f"Transactions from {start_date.strftime(CSV.DATE_FORMAT)} to {end_date.strftime(CSV.DATE_FORMAT)}"
             )
@@ -82,21 +82,20 @@ def add():
     CSV.add_entry(date=date, amount=amount, category=category, description=description)
 
 
-def plot(df: pd.DataFrame):
-    df.set_index("date", inplace=True)
-
+def plot(filtered_df: pd.DataFrame):
+    filtered_df.set_index("date", inplace=True)
     income_df = (
-        df[df["category"] == "Income"]
+        filtered_df[filtered_df["category"] == "Income"]
         .resample("D")
         .sum()
-        .reindex(df.index, fill_value=0)
+        .reindex(filtered_df.index, fill_value=0)
     )
 
     expense_df = (
-        df[df["category"] == "Expense"]
+        filtered_df[filtered_df["category"] == "Expense"]
         .resample("D")
         .sum()
-        .reindex(df.index, fill_value=0)
+        .reindex(filtered_df.index, fill_value=0)
     )
 
     plt.figure(figsize=(10, 5))
