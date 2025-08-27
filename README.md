@@ -2,9 +2,9 @@
 
 Daily expense/income tracker using python, pandas and matplotlib
 
-# Dependency management using (UV)[https://docs.astral.sh/uv/getting-started/installation/]
+# Dependency management using `UV`
 
-You can add/remove python dependencies using extremely performant package manager `UV`
+You can add/remove python dependencies using extremely performant package manager [UV](https://docs.astral.sh/uv/getting-started/installation/)
 
 # How to use daily expense tracker app?
 
